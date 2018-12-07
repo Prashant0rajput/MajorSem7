@@ -1,0 +1,28 @@
+<div id="header">
+
+  Crowd Circle
+
+</div>
+
+<agm-map [styles]="false" [clickableIcons]="false" [streetViewControlOptions]="false"  [disableDefaultUI]="true" [zoom]='18' [latitude]="lat" [longitude]="lng">
+
+
+  <agm-marker class="mapMarker" *ngFor="let device of devices;"  [latitude]="device.latitude" [longitude]="device.longitude"
+
+
+              [iconUrl]="'https://img.icons8.com/color/40/000000/user-location.png'" >
+
+    <agm-info-window>
+
+      <div class="eventText">
+        <strong>{{device.name}}</strong>
+      </div>
+
+      <!--<button class="btn btn-success btn-sm"-->
+              <!--(hover)="onDelete(m)">Delete</button>-->
+    </agm-info-window>
+
+  </agm-marker>
+
+
+</agm-map>
